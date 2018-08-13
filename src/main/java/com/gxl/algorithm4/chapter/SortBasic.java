@@ -53,6 +53,7 @@ public class SortBasic {
 
     /**
      * judge the arr is sort
+     *
      * @return
      */
     public static Boolean sort(Comparable[] arr) {

@@ -25,16 +25,23 @@ public class SelectionSort implements Sort {
      */
     public Comparable[] sort(Comparable[] arr) {
         for (int i = 0; i < arr.length; i++) {
+
+            // min number index
             int min = i;
             for (int j = i + 1; j < arr.length; j++) {
+
+                // In the arr if index j lt  i , change min index is j
                 if (SortBasic.less(arr[j], arr[min])) {
                     min = j;
                 }
             }
+
+            // if occur change
             if (min != i) {
-                Comparable comparable = arr[i];
-                arr[i] = arr[min];
-                arr[min] = comparable;
+                SortBasic.exch(arr, i, min);
+//                Comparable comparable = arr[i];
+//                arr[i] = arr[min];
+//                arr[min] = comparable;
             }
         }
         return arr;
@@ -42,6 +49,6 @@ public class SelectionSort implements Sort {
 
 
     public static void main(String[] args) {
-        Test.test10000(new SelectionSort());
+        Test.test100(new SelectionSort());
     }
 }
