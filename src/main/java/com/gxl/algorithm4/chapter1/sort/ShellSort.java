@@ -12,7 +12,7 @@ import com.gxl.algorithm4.chapter.SortBasic;
 public class ShellSort implements Sort {
 
     /**
-     * xi
+     * 希尔排序根据负载参数把数据分成了很多个段
      *
      * @param arr
      * @return
@@ -22,21 +22,20 @@ public class ShellSort implements Sort {
         int n = arr.length;
         int h = 1;
 
-
         // 计算负载因子
-        while (h < n / 4)
-            h = 4 * h + 1;
+        while (h < n / 3)
+            h = 3 * h + 1;
 
         // 计算分次
         while (h >= 1) {
-
             //
             for (int i = h; i < n; i++) {
+                //
                 for (int j = i; j >= h && SortBasic.less(arr[j], arr[j - h]); j -= h) {
                     SortBasic.exch(arr, j, j - h);
                 }
             }
-            h = h / 4;
+            h = h / 3;
         }
         return arr;
     }

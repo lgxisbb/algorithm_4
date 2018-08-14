@@ -39,9 +39,6 @@ public class SelectionSort implements Sort {
             // if occur change
             if (min != i) {
                 SortBasic.exch(arr, i, min);
-//                Comparable comparable = arr[i];
-//                arr[i] = arr[min];
-//                arr[min] = comparable;
             }
         }
         return arr;
